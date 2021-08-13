@@ -51,3 +51,6 @@
    Values allowed (no case sensitive):
     * CHROME,
     * FIREFOX
+
+## Execution Report: 
+![image](https://user-images.githubusercontent.com/5452898/129296566-1253bb19-4a0c-475c-ba8b-7250a367b087.png)
