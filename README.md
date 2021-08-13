@@ -51,6 +51,8 @@
    Values allowed (no case sensitive):
     * CHROME,
     * FIREFOX
+## Execution from IntelliJ IDEA
+![Screen Shot 2021-08-12 at 22 32 59](https://user-images.githubusercontent.com/5452898/129296952-f6b4aa66-16ff-4a92-9c38-46f4cc80777b.png)
 
 ## Execution Report: 
 ![image](https://user-images.githubusercontent.com/5452898/129296566-1253bb19-4a0c-475c-ba8b-7250a367b087.png)
