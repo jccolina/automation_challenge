@@ -52,6 +52,10 @@
     * CHROME,
     * FIREFOX
 ## Execution from IntelliJ IDEA
+1. Download IntelliJ IDEA from https://www.jetbrains.com/idea/download/#section=mac
+2. Click on gradle (elephant icon) on right side
+3. Click Execute gradle task in popup (another elephant icon)
+4. Type ```gradle uiTests``` in text field. 
 ![Screen Shot 2021-08-12 at 22 32 59](https://user-images.githubusercontent.com/5452898/129296952-f6b4aa66-16ff-4a92-9c38-46f4cc80777b.png)
 
 ## Execution Report: 
