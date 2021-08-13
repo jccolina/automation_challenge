@@ -9,7 +9,6 @@ import org.junit.Assert;
 
 public class SearchResultsSteps {
     private final SearchResults searchResults;
-    private final String NUMBER_OF_RESULTS_REGEX = "([0-9]+,*[0-9]*)( repository result)";
 
     public SearchResultsSteps(SearchResults searchResults) {
         this.searchResults = searchResults;
@@ -20,23 +19,26 @@ public class SearchResultsSteps {
         this.searchResults.clickAdvancedSearchLink();
     }
 
-    @Then("I should see {string} repo in results")
+    @Then("I should see {string} label in results")
     public void iShouldSeeRepoInResults(String expectedResultsLabel) {
-        int actualNumberOfRepos = this.searchResults.getNumberOfResultsDisplayed();
         String actualResultsLabel = this.searchResults.getSearchResultsLabel();
-        int expectedNumberOfRepos = Integer.parseInt(TextUtils.getRegexPattern(expectedResultsLabel, NUMBER_OF_RESULTS_REGEX, 1));
         Assert.assertEquals(expectedResultsLabel, actualResultsLabel);
-        Assert.assertEquals(expectedNumberOfRepos, actualNumberOfRepos);
     }
 
     @And("I should see the repo {string} in search results")
     public void iShouldSeeTheRepoInSearchResults(String expectedRepoName) {
-        String actualReponName = this.searchResults.getFirstResultName();
-        Assert.assertEquals(expectedRepoName, actualReponName);
+        Assert.assertTrue("Repo: " + expectedRepoName + " is not present in search results.",
+                this.searchResults.isRepoPresent(expectedRepoName));
     }
 
     @And("I open the repo {string} in search results")
     public void iOpenTheRepoInSearchResults(String repoName) {
         this.searchResults.openRepoInResults(repoName);
+    }
+
+    @And("I should see {int} repos in search results")
+    public void iShouldSeeReposInSearchResults(int expectedNumberOfRepos) {
+        int actualNumberOfRepos = this.searchResults.getNumberOfResultsDisplayed();
+        Assert.assertEquals(expectedNumberOfRepos, actualNumberOfRepos);
     }
 }

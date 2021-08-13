@@ -1,4 +1,4 @@
-Feature: Search repositories from home
+Feature: Search repositories
 
   Scenario: Search repo using advanced filters
     Given I am on home page
@@ -11,7 +11,8 @@ Feature: Search repositories from home
         | With this license        | Boost Software License 1.0 |
         | Written in this language | JavaScript                 |
       And I press search button
-    Then I should see "1 repository result" repo in results
+    Then I should see "1 repository result" label in results
+      And I should see 1 repos in search results
       And I should see the repo "mvoloskov/decider" in search results
       And I open the repo "mvoloskov/decider" in search results
-      And I print 300 characters of readme file
+      And I print the first 300 characters of readme file

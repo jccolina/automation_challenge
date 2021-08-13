@@ -11,9 +11,9 @@ public class RepoHomeSteps {
         this.repoHome = repoHome;
     }
 
-    @And("I print {int} characters of readme file")
+    @And("I print the first {int} characters of readme file")
     public void iPrintCharactersOfReadmeFile(int numberOfChars) {
         String readmeText = this.repoHome.getReadmeText();
-        TextUtils.printCharsFromText(readmeText, numberOfChars);
+        TextUtils.printCharsFromText(TextUtils.removeEmojis(readmeText), numberOfChars);
     }
 }
